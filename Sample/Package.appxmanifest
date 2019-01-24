@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="b83cb299-fbef-475b-8fdd-527a4589da21"
+    Name="d9d02faa-bd40-4c1f-8bd3-af3109c2089a"
     Publisher="CN=sugur"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="b83cb299-fbef-475b-8fdd-527a4589da21" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d9d02faa-bd40-4c1f-8bd3-af3109c2089a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ReactorSample</DisplayName>
+    <DisplayName>Sample</DisplayName>
     <PublisherDisplayName>sugur</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="ReactorSample.App">
+      EntryPoint="Sample.App">
       <uap:VisualElements
-        DisplayName="ReactorSample"
+        DisplayName="Sample"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="ReactorSample"
+        Description="Sample"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
