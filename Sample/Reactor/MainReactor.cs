@@ -8,28 +8,28 @@ using dotnetReactorkit;
 
 namespace Sample.Reactor {
 
-    public enum Action {
+    internal enum Action {
         didChange
     }
 
-    public enum MutationType {
+    internal enum MutationType {
         UpdateCount
     }
 
-    public struct State {
+    internal struct State {
         public int Counter { get; set; }
     }
 
     public class Mutation : ReactorMutation {
-        public MutationType CurrentType;
-        public object Param;
+        internal MutationType CurrentType;
+        internal object Param;
 
-        public Mutation(MutationType type, object param = null) {
+        internal Mutation(MutationType type, object param = null) {
             this.CurrentType = type;
             this.Param = param;
         }
     }
-    public class MainReactor: Reactor<Action, State> {
+    internal class MainReactor: Reactor<Action, State> {
 
         /// <summary>
         /// 
@@ -39,9 +39,7 @@ namespace Sample.Reactor {
         };
 
 
-        public MainReactor(): base(initialState: initState) {
-
-        }
+        public MainReactor(): base(initialState: initState) {}
 
 
         /// <summary>
@@ -50,6 +48,8 @@ namespace Sample.Reactor {
         /// <param name="action"></param>
         /// <returns></returns>
         protected override IObservable<ReactorMutation> Mutate(Action action) {
+
+            
             switch (action) {
                 
                 case Action.didChange:
