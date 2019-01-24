@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -26,12 +27,15 @@ namespace Sample
         {
             this.InitializeComponent();
 
+            // Update only when even number
+            this._reactor.state
+                .Select(state => state.Counter)
+                .Where(counter => counter % 2 == 0)
+                .Subscribe(counter => {
+                    this.LabelResult.Text = (counter).ToString();
+                });
 
-
-            this._reactor.state.Subscribe(state => {
-                this.LabelResult.Text = state.Counter.ToString();
-            });
-
+        
             this.ButtonCount.Click += (sender, e) => {
 
                 this._reactor.action.OnNext(Sample.Reactor.Action.didChange);

@@ -55,7 +55,6 @@ namespace dotnetReactorkit
             get { return this._state; }
         }
 
-
         /// <summary>
         /// Constructor
         /// </summary>
