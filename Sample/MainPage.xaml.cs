@@ -20,7 +20,6 @@ namespace Sample
     
     public sealed partial class MainPage : Page
     {
-
         private MainReactor _reactor = new MainReactor();
        
         public MainPage()
