@@ -1,8 +1,9 @@
 # .Net Reactorkit 
 
-It is C # version of Reactorkit.
+This is C # version of Reactorkit. 
 
-original source is [here](https://github.com/ReactorKit/ReactorKit)
+Original code is [swift](https://github.com/ReactorKit/ReactorKit)
+I love ReactorKit in swift :)
 
 ## Concept
 ReactorKit is a combination of Flux and Reactive Programming. 
