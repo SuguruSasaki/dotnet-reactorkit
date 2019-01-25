@@ -14,19 +14,20 @@ These streams are unidirectional: the view can only emit actions and the reactor
 
 Refer to the following code and create your Reactor class.
 
+Action
+
 ```
 enum Action {
     
 }
+```
 
+MutationType
+
+```
 enum MutationType {
     
 }
-
-struct State {
-    public int Counter { get; set; }
-}
-
 
 public class Mutation : ReactorMutation {
     internal MutationType CurrentType;
@@ -37,7 +38,19 @@ public class Mutation : ReactorMutation {
         this.Param = param;
     }
 }
+```
 
+State
+
+```
+struct State {
+    public int Counter { get; set; }
+}
+```
+
+Reactor
+
+```
 class MainReactor: Reactor<Action, State> {
 
     private static State initState = new State {
