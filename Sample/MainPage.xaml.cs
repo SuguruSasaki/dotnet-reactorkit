@@ -20,7 +20,6 @@ namespace Sample
     
     public sealed partial class MainPage : Page
     {
-
         private MainReactor _reactor = new MainReactor();
        
         public MainPage()
@@ -37,7 +36,6 @@ namespace Sample
 
         
             this.ButtonCount.Click += (sender, e) => {
-
                 this._reactor.action.OnNext(Sample.Reactor.Action.didChange);
             };
 

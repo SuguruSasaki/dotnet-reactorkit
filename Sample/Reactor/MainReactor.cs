@@ -1,10 +1,11 @@
-﻿using System;
+﻿using dotnetReactorkit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using dotnetReactorkit;
+
 
 namespace Sample.Reactor {
 
