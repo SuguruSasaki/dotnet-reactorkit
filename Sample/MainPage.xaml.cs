@@ -36,7 +36,6 @@ namespace Sample
 
         
             this.ButtonCount.Click += (sender, e) => {
-
                 this._reactor.action.OnNext(Sample.Reactor.Action.didChange);
             };
 
