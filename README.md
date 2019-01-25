@@ -10,11 +10,12 @@ ReactorKit is a combination of Flux and Reactive Programming.
 The user actions and the view states are delivered to each layer via observable streams.
 These streams are unidirectional: the view can only emit actions and the reactor can only emit states.
 
-## How to use
+## Usage
 
 Refer to the following code and create your Reactor class.
 
-Action
+### Action
+Actions represent user actions and Views issue Actions.
 
 ```
 enum Action {
