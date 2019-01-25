@@ -16,7 +16,7 @@ namespace dotnetReactorkit
     /// </summary>
     /// <typeparam name="ActionType"></typeparam>
     /// <typeparam name="StateType"></typeparam>
-    public class Reactor<ActionType, StateType> {
+    public class Reactor<ActionType, StateType> : IReactable<ActionType, StateType> {
 
         /// <summary>
         /// Subject of Action

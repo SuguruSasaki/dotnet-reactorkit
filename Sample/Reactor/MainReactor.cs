@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sample.Reactor {
 
-    internal enum Action {
+    public enum Action {
         didChange
     }
 
@@ -17,7 +17,7 @@ namespace Sample.Reactor {
         UpdateCount
     }
 
-    internal struct State {
+    public struct State {
         public int Counter { get; set; }
     }
 
@@ -30,7 +30,7 @@ namespace Sample.Reactor {
             this.Param = param;
         }
     }
-    internal class MainReactor: Reactor<Action, State> {
+    internal class MainReactor: Reactor<Action, State>, IReactable<Action, State> {
 
         /// <summary>
         /// 
@@ -49,8 +49,6 @@ namespace Sample.Reactor {
         /// <param name="action"></param>
         /// <returns></returns>
         protected override IObservable<ReactorMutation> Mutate(Action action) {
-
-            
             switch (action) {
                 
                 case Action.didChange:

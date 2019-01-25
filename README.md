@@ -10,23 +10,25 @@ ReactorKit is a combination of Flux and Reactive Programming.
 The user actions and the view states are delivered to each layer via observable streams.
 These streams are unidirectional: the view can only emit actions and the reactor can only emit states.
 
-## How to use
+## Usage
 
 Refer to the following code and create your Reactor class.
+
+### Action
+Actions represent user actions and Views issue Actions.
 
 ```
 enum Action {
     
 }
+```
 
+### Mutation
+
+```
 enum MutationType {
     
 }
-
-struct State {
-    public int Counter { get; set; }
-}
-
 
 public class Mutation : ReactorMutation {
     internal MutationType CurrentType;
@@ -37,7 +39,19 @@ public class Mutation : ReactorMutation {
         this.Param = param;
     }
 }
+```
 
+### State
+
+```
+struct State {
+    public int Counter { get; set; }
+}
+```
+
+### Reactor
+
+```
 class MainReactor: Reactor<Action, State> {
 
     private static State initState = new State {
