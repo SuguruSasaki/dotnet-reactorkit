@@ -23,7 +23,7 @@ enum Action {
 }
 ```
 
-MutationType
+### Mutation
 
 ```
 enum MutationType {
@@ -41,7 +41,7 @@ public class Mutation : ReactorMutation {
 }
 ```
 
-State
+### State
 
 ```
 struct State {
@@ -49,7 +49,7 @@ struct State {
 }
 ```
 
-Reactor
+### Reactor
 
 ```
 class MainReactor: Reactor<Action, State> {
