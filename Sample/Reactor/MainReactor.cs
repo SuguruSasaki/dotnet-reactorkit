@@ -1,6 +1,7 @@
 ﻿using dotnetReactorkit;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
@@ -49,10 +50,10 @@ namespace Sample.Reactor {
         /// <param name="action"></param>
         /// <returns></returns>
         protected override IObservable<ReactorMutation> Mutate(Action action) {
+            Debug.WriteLine("mutate done");
             switch (action) {
                 
                 case Action.didChange:
-
                     var c = this.CurrentState.Counter + 1;
                     return Observable.Return(new Mutation(type: MutationType.UpdateCount, param: c));
 

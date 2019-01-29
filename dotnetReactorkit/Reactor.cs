@@ -59,6 +59,7 @@ namespace dotnetReactorkit
         public Reactor(StateType initialState) {
             this.InitialState = initialState;
             this._state = this.CreateStateStream();
+            this._state.Subscribe().Dispose(); // need once susbscribe.
         }
 
         /// <summary>
@@ -73,12 +74,14 @@ namespace dotnetReactorkit
             var state = mutation.Scan(this.InitialState, (__state, __mutation) => {
                 return Reduce(state: __state, mutation: __mutation);
             })
+            .Catch(Observable.Empty<StateType>())
             .StartWith(this.InitialState)
             .ObserveOnDispatcher()
             .Do((__state) => {
                 this.CurrentState = __state;
             })
             .Replay(1);
+
             return state.AutoConnect();
         }
 
