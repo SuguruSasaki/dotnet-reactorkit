@@ -17,7 +17,7 @@ Refer to the following code and create your Reactor class.
 ### Action
 Actions represent user actions and Views issue Actions.
 
-```
+```c#
 enum Action {
     
 }
@@ -25,7 +25,7 @@ enum Action {
 
 ### Mutation
 
-```
+```c#
 enum MutationType {
     
 }
@@ -43,7 +43,7 @@ public class Mutation : ReactorMutation {
 
 ### State
 
-```
+```c#
 struct State {
     public int Counter { get; set; }
 }
@@ -51,7 +51,7 @@ struct State {
 
 ### Reactor
 
-```
+```c#
 class MainReactor: Reactor<Action, State> {
 
     private static State initState = new State {

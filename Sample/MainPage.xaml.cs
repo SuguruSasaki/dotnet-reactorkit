@@ -16,6 +16,9 @@ namespace Sample
         {
             this.InitializeComponent();
 
+     
+            
+
             // Update only when even number
             this._reactor.state
                 .Select(state => state.Counter)
