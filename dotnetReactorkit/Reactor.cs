@@ -100,5 +100,7 @@ namespace dotnetReactorkit
         protected virtual StateType Reduce(StateType state, ReactorMutation mutation) {
             return state;
         }
+
+       
     }
 }
