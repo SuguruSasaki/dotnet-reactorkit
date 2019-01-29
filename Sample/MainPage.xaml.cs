@@ -1,6 +1,7 @@
 ﻿using dotnetReactorkit;
 using Sample.Reactor;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using Windows.UI.Xaml.Controls;
@@ -16,11 +17,8 @@ namespace Sample
         {
             this.InitializeComponent();
 
-     
-            
-
             // Update only when even number
-            this._reactor.state
+            var token = this._reactor.state
                 .Select(state => state.Counter)
                 //.Where(counter => counter % 2 == 0)
                 .Subscribe(counter => {
