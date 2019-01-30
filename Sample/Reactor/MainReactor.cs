@@ -10,8 +10,27 @@ using System.Threading.Tasks;
 
 namespace Sample.Reactor {
 
-    public enum Action {
-        didChange
+ 
+    public class ActionStruct {
+
+        public enum Action {
+            didChange
+        }
+
+        public Action ActionType;
+        public dynamic Param;
+
+
+        public ActionStruct(Action action, dynamic param = null) {
+            this.ActionType = action;
+            this.Param = param;
+        }
+
+
+        public static ActionStruct Dispatcher(Action action, dynamic param = null) {
+            return new ActionStruct(action, param);
+        }
+
     }
 
     internal enum MutationType {
@@ -31,7 +50,8 @@ namespace Sample.Reactor {
             this.Param = param;
         }
     }
-    internal class MainReactor: Reactor<Action, State>, IReactable<Action, State> {
+
+    internal class MainReactor: Reactor<ActionStruct, State>, IReactable<ActionStruct, State> {
 
         /// <summary>
         /// 
@@ -49,11 +69,12 @@ namespace Sample.Reactor {
         /// </summary>
         /// <param name="action"></param>
         /// <returns></returns>
-        protected override IObservable<ReactorMutation> Mutate(Action action) {
+        protected override IObservable<ReactorMutation> Mutate(ActionStruct action) {
+            
             Debug.WriteLine("mutate done");
-            switch (action) {
+            switch (action.ActionType) {
                 
-                case Action.didChange:
+                case ActionStruct.Action.didChange:
                     var c = this.CurrentState.Counter + 1;
                     return Observable.Return(new Mutation(type: MutationType.UpdateCount, param: c));
 
