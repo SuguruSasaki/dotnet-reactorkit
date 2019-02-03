@@ -119,6 +119,12 @@
       <Version>4.1.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\rx-uwp\RxUWP\RxUWP.csproj">
+      <Project>{eacc03aa-d465-481f-a010-2cc83c19dacb}</Project>
+      <Name>RxUWP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
