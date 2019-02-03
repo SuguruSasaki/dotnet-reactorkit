@@ -14,6 +14,23 @@ These streams are unidirectional: the view can only emit actions and the reactor
 
 Refer to the following code and create your Reactor class.
 
+```c#
+
+// Bind state
+this._reactor.state
+    .Select(state => state.Counter.ToString())
+    .Bind(to: this.LabelResult.rx_Text())
+    .DisposeBag(bag: this._disposeBag);
+
+// Bind Button action
+this.ButtonCount.rx_Tap()
+    .Select(x => new MainAction(action: MainAction.Action.didChange))
+    .Bind(to: this._reactor.action)
+    .DisposeBag(bag: this._disposeBag);
+
+```
+
+
 ### Action
 Actions represent user actions and Views issue Actions.
 
