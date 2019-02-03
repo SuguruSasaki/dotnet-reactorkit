@@ -136,6 +136,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\rx-uwp\RxUWP\RxUWP.csproj">
+      <Project>{eacc03aa-d465-481f-a010-2cc83c19dacb}</Project>
+      <Name>RxUWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dotnetReactorkit\dotnetReactorkit.csproj">
       <Project>{24afde8d-862c-4c3e-8a69-a32f8c2b630e}</Project>
       <Name>dotnetReactorkit</Name>
